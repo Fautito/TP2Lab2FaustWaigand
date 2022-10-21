@@ -96,6 +96,7 @@
             // cBprovincia
             // 
             this.cBprovincia.BackColor = System.Drawing.Color.LimeGreen;
+            this.cBprovincia.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cBprovincia.FormattingEnabled = true;
             this.cBprovincia.Items.AddRange(new object[] {
             "Buenos Aires",
@@ -225,6 +226,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.LimeGreen;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(187, 12);
             this.comboBox1.Name = "comboBox1";

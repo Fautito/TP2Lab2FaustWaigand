@@ -99,5 +99,10 @@ namespace LabTP2
                 gbHotel.Visible = false;
             }
         }
+
+        private void gbCasa_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
