@@ -31,7 +31,9 @@ namespace LabTP2
         public override bool Equals(object obj)
         {
             Habitacion h = (Habitacion)obj;
-            return h.estrellas == this.estrellas && h.Capacidad == this.Capacidad;
+            return h.estrellas == 1 & h.Capacidad==0 | h.estrellas == 1 & h.Capacidad == this.Capacidad | h.estrellas == this.estrellas & h.Capacidad == 0 | this.estrellas == h.Estrellas & this.Capacidad==h.Capacidad;
+                ////(h.estrellas == 1 && h.Capacidad == this.Capacidad) || (h.estrellas == this.estrellas && h.Capacidad == 0);
+                //// h.estrellas == this.estrellas | h.estrellas==1 | h.Capacidad == this.Capacidad | h.Capacidad==0;
         }
 
         public override int GetHashCode()

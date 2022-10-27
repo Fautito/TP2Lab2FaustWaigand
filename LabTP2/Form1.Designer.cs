@@ -167,13 +167,14 @@
             // cBestrellas
             // 
             this.cBestrellas.BackColor = System.Drawing.Color.SteelBlue;
+            this.cBestrellas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBestrellas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cBestrellas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBestrellas.FormattingEnabled = true;
             this.cBestrellas.Items.AddRange(new object[] {
             "Todos",
-            "⭐⭐⭐",
-            "⭐⭐"});
+            "⭐⭐",
+            "⭐⭐⭐"});
             this.cBestrellas.Location = new System.Drawing.Point(190, 57);
             this.cBestrellas.Name = "cBestrellas";
             this.cBestrellas.Size = new System.Drawing.Size(121, 24);
@@ -183,6 +184,7 @@
             // cBhabit
             // 
             this.cBhabit.BackColor = System.Drawing.Color.SteelBlue;
+            this.cBhabit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBhabit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cBhabit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBhabit.FormattingEnabled = true;
@@ -191,7 +193,7 @@
             "Simple",
             "Doble",
             "Triple"});
-            this.cBhabit.Location = new System.Drawing.Point(348, 56);
+            this.cBhabit.Location = new System.Drawing.Point(345, 56);
             this.cBhabit.Name = "cBhabit";
             this.cBhabit.Size = new System.Drawing.Size(121, 24);
             this.cBhabit.TabIndex = 3;
@@ -238,6 +240,7 @@
             // cBcamas
             // 
             this.cBcamas.BackColor = System.Drawing.Color.SteelBlue;
+            this.cBcamas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBcamas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cBcamas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBcamas.FormattingEnabled = true;
@@ -248,7 +251,7 @@
             "3 camas",
             "4 camas",
             "5 camas"});
-            this.cBcamas.Location = new System.Drawing.Point(190, 87);
+            this.cBcamas.Location = new System.Drawing.Point(190, 57);
             this.cBcamas.Name = "cBcamas";
             this.cBcamas.Size = new System.Drawing.Size(121, 24);
             this.cBcamas.TabIndex = 3;

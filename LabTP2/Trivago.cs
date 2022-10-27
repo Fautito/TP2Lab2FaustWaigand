@@ -81,43 +81,19 @@ namespace LabTP2
         //acciones con alojamientos
         public Alojamiento[] MostrarAlojamientos(Alojamiento a)
         {
-            Alojamiento[] aloj;
-            if (a is Casa)
+            ArrayList res = new ArrayList();
+
+            if (a.GetType() == typeof(Casa)) 
+                a = (Casa)a;
+            else   
+                a = (Habitacion)a;
+    
+            foreach(Alojamiento alojamiento in Alojamientos)
             {
-                Casa c = (Casa)a;
-                ArrayList res = new ArrayList();
-                foreach(Alojamiento casa in Alojamientos)
-                {
-                    if(casa is Casa)
-                    {
-                        Casa casa2 = (Casa)casa;
-                        if (casa2.Equals(c)) res.Add(casa2);
-                    }
-                    
-                }
-                aloj = (Alojamiento[])res.ToArray(typeof(Casa)) ;
-            }
-            else if (a is Habitacion)
-            {
-                Habitacion h = (Habitacion)a;
-                ArrayList res = new ArrayList();
-                foreach (Alojamiento hab in Alojamientos)
-                {
-                    if (hab is Habitacion)
-                    {
-                        Habitacion habitacion = (Habitacion)hab;
-                        if (habitacion.Equals(h)) res.Add(habitacion);
-                    }
-                    
-                }
-                aloj = (Alojamiento[])res.ToArray(typeof(Habitacion));
-            }
-            else
-            {
-                throw new Exception("tipo de propiedad invalido");
+                if (alojamiento.GetType() == a.GetType() && alojamiento.Equals(a)) res.Add(alojamiento);
             }
 
-            return aloj;
+            return (Alojamiento[])res.ToArray(typeof(Alojamiento));
         }
 
 
@@ -149,6 +125,8 @@ namespace LabTP2
             FileStream fsReservas = new FileStream(Application.StartupPath + "reservas.bin", FileMode.Truncate, FileAccess.Write);
             BinaryFormatter bf = new BinaryFormatter();
 
+
+            ////por ahora solo esta serializando alojamientos
             //bf.Serialize(fsClientes, Clientes);
             bf.Serialize(fsAlojamientos, Alojamientos);
             //bf.Serialize(fsReservas, Reservas);

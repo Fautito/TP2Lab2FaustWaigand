@@ -62,24 +62,26 @@ namespace LabTP2
 
         private void cBalojamiento_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //habilita los combobox correspondientes
             cBestrellas.Visible = cBalojamiento.SelectedIndex == 1;
             cBestrellas.Enabled = cBalojamiento.SelectedIndex == 1;
             cBhabit.Visible = cBalojamiento.SelectedIndex == 1;
             cBhabit.Enabled = cBalojamiento.SelectedIndex == 1;
             cBcamas.Visible = cBalojamiento.SelectedIndex == 2;
             cBcamas.Enabled = cBalojamiento.SelectedIndex == 2;
-            Alojamiento[] lista = new Alojamiento[1];
+            Alojamiento[] lista = null;
+
             switch (cBalojamiento.SelectedIndex)
             {
                 case 0:
                     lista = gestor.MostrarAlojamientos();
                     break;
                 case 1:
-                    Habitacion h = new Habitacion(cBhabit.SelectedIndex + 1, "", cBestrellas.SelectedIndex + 2, "");
+                    Habitacion h = new Habitacion(cBhabit.SelectedIndex, "", cBestrellas.SelectedIndex+1, "");
                     lista = gestor.MostrarAlojamientos(h);
                     break;
                 case 2:
-                    Casa c = new Casa(cBcamas.SelectedIndex + 1, "", new bool[] { false }, 1);
+                    Casa c = new Casa(cBcamas.SelectedIndex, "", new bool[] { false }, 1);
                     lista = gestor.MostrarAlojamientos(c);
                     break;
             }

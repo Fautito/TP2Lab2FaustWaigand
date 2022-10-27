@@ -31,7 +31,7 @@ namespace LabTP2
         public override bool Equals(object obj)
         {
             Casa c = (Casa)obj;
-            return c.Capacidad == this.Capacidad;
+            return  c.Capacidad==0 | this.Capacidad==c.Capacidad;
         }
 
         public override int GetHashCode()
