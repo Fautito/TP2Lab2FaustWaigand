@@ -96,11 +96,11 @@
             this.gbCasa.Controls.Add(this.chBPileta);
             this.gbCasa.Controls.Add(this.chBLimpieza);
             this.gbCasa.Controls.Add(this.chBCochera);
-            this.gbCasa.Location = new System.Drawing.Point(70, 180);
+            this.gbCasa.Location = new System.Drawing.Point(37, 186);
             this.gbCasa.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbCasa.Name = "gbCasa";
             this.gbCasa.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbCasa.Size = new System.Drawing.Size(234, 207);
+            this.gbCasa.Size = new System.Drawing.Size(251, 207);
             this.gbCasa.TabIndex = 3;
             this.gbCasa.TabStop = false;
             this.gbCasa.Text = "Casa";
@@ -215,7 +215,7 @@
             this.gbHotel.Controls.Add(this.label6);
             this.gbHotel.Controls.Add(this.tBNumHab);
             this.gbHotel.Controls.Add(this.label7);
-            this.gbHotel.Location = new System.Drawing.Point(52, 180);
+            this.gbHotel.Location = new System.Drawing.Point(40, 186);
             this.gbHotel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbHotel.Name = "gbHotel";
             this.gbHotel.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -242,10 +242,10 @@
             this.comboBox2.Items.AddRange(new object[] {
             "⭐⭐",
             "⭐⭐⭐"});
-            this.comboBox2.Location = new System.Drawing.Point(76, 33);
+            this.comboBox2.Location = new System.Drawing.Point(119, 29);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(78, 21);
+            this.comboBox2.Size = new System.Drawing.Size(112, 21);
             this.comboBox2.TabIndex = 6;
             // 
             // label6
@@ -261,7 +261,7 @@
             // tBNumHab
             // 
             this.tBNumHab.BackColor = System.Drawing.Color.LimeGreen;
-            this.tBNumHab.Location = new System.Drawing.Point(76, 71);
+            this.tBNumHab.Location = new System.Drawing.Point(119, 65);
             this.tBNumHab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tBNumHab.Name = "tBNumHab";
             this.tBNumHab.Size = new System.Drawing.Size(112, 21);
@@ -270,7 +270,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 78);
+            this.label7.Location = new System.Drawing.Point(14, 68);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 13);
@@ -280,7 +280,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 128);
+            this.label1.Location = new System.Drawing.Point(38, 128);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
@@ -290,7 +290,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 91);
+            this.label2.Location = new System.Drawing.Point(38, 91);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 13);
@@ -300,7 +300,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 58);
+            this.label3.Location = new System.Drawing.Point(38, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
@@ -387,7 +387,7 @@
             // 
             this.bEliminar.DialogResult = System.Windows.Forms.DialogResult.No;
             this.bEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bEliminar.Location = new System.Drawing.Point(305, 13);
+            this.bEliminar.Location = new System.Drawing.Point(305, 10);
             this.bEliminar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bEliminar.Name = "bEliminar";
             this.bEliminar.Size = new System.Drawing.Size(88, 23);
@@ -433,31 +433,31 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox tBDIreccion;
-        private System.Windows.Forms.GroupBox gbCasa;
-        private System.Windows.Forms.GroupBox gbHotel;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.CheckBox chBMascotas;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chBWifi;
-        private System.Windows.Forms.CheckBox chBDesayuno;
-        private System.Windows.Forms.CheckBox chBPileta;
-        private System.Windows.Forms.CheckBox chBLimpieza;
-        private System.Windows.Forms.CheckBox chBCochera;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox cbAlojamientos;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tBNumHab;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button bAgregar;
-        private System.Windows.Forms.Button bModif;
-        private System.Windows.Forms.Button bCancel;
-        private System.Windows.Forms.Button bEliminar;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox tBDIreccion;
+        public System.Windows.Forms.GroupBox gbCasa;
+        public System.Windows.Forms.GroupBox gbHotel;
+        public System.Windows.Forms.NumericUpDown numericUpDown2;
+        public System.Windows.Forms.CheckBox chBMascotas;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.CheckBox chBWifi;
+        public System.Windows.Forms.CheckBox chBDesayuno;
+        public System.Windows.Forms.CheckBox chBPileta;
+        public System.Windows.Forms.CheckBox chBLimpieza;
+        public System.Windows.Forms.CheckBox chBCochera;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.NumericUpDown numericUpDown1;
+        public System.Windows.Forms.ComboBox cbAlojamientos;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox tBNumHab;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Button bAgregar;
+        public System.Windows.Forms.Button bModif;
+        public System.Windows.Forms.Button bCancel;
+        public System.Windows.Forms.Button bEliminar;
     }
 }

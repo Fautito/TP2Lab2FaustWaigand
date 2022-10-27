@@ -16,5 +16,10 @@ namespace LabTP2
         {
             InitializeComponent();
         }
+
+        private void Fregistrar_Load(object sender, EventArgs e)
+        {
+            comboBox1.Visible = false;
+        }
     }
 }

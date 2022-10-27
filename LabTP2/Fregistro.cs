@@ -16,5 +16,10 @@ namespace LabTP2
         {
             InitializeComponent();
         }
+
+        private void Fregistro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

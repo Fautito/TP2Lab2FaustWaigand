@@ -18,10 +18,11 @@ namespace LabTP2
             this.fechaCheckOut = this.fechaCheckIn.AddDays(dias);
             this.dias = dias;
             this.alojamiento = aloj;
+            alojamiento.Reservar(this);
         }
 
         //alojamiento
-        Alojamiento alojamiento;
+        public Alojamiento alojamiento;
 
         //cliente
         private Cliente c;

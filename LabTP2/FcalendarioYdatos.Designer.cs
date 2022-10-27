@@ -31,16 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FcalendarioYdatos));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
-            this.tBdireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tBnum = new System.Windows.Forms.TextBox();
             this.tBcantPersonas = new System.Windows.Forms.TextBox();
-            this.cBeshotel = new System.Windows.Forms.CheckBox();
-            this.cBhabitacion = new System.Windows.Forms.ComboBox();
+            this.cBAlojamiento = new System.Windows.Forms.ComboBox();
             this.btnaceptar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
+            this.cbClientes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -61,20 +60,11 @@
             this.label1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Location = new System.Drawing.Point(100, 229);
+            this.label1.Location = new System.Drawing.Point(133, 228);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 18);
+            this.label1.Size = new System.Drawing.Size(54, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Direccion : ";
-            // 
-            // tBdireccion
-            // 
-            this.tBdireccion.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tBdireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBdireccion.Location = new System.Drawing.Point(205, 226);
-            this.tBdireccion.Name = "tBdireccion";
-            this.tBdireccion.Size = new System.Drawing.Size(196, 23);
-            this.tBdireccion.TabIndex = 2;
+            this.label1.Text = "Cliente";
             // 
             // label2
             // 
@@ -130,31 +120,17 @@
             this.tBcantPersonas.Size = new System.Drawing.Size(41, 23);
             this.tBcantPersonas.TabIndex = 7;
             // 
-            // cBeshotel
+            // cBAlojamiento
             // 
-            this.cBeshotel.AutoSize = true;
-            this.cBeshotel.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.cBeshotel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cBeshotel.Location = new System.Drawing.Point(315, 263);
-            this.cBeshotel.Name = "cBeshotel";
-            this.cBeshotel.Size = new System.Drawing.Size(58, 20);
-            this.cBeshotel.TabIndex = 8;
-            this.cBeshotel.Text = "Hotel";
-            this.cBeshotel.UseVisualStyleBackColor = false;
-            // 
-            // cBhabitacion
-            // 
-            this.cBhabitacion.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.cBhabitacion.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cBhabitacion.FormattingEnabled = true;
-            this.cBhabitacion.Items.AddRange(new object[] {
-            "Simple",
-            "Doble ",
-            "Triple"});
-            this.cBhabitacion.Location = new System.Drawing.Point(205, 288);
-            this.cBhabitacion.Name = "cBhabitacion";
-            this.cBhabitacion.Size = new System.Drawing.Size(121, 24);
-            this.cBhabitacion.TabIndex = 9;
+            this.cBAlojamiento.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.cBAlojamiento.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cBAlojamiento.FormattingEnabled = true;
+            this.cBAlojamiento.Location = new System.Drawing.Point(205, 288);
+            this.cBAlojamiento.Name = "cBAlojamiento";
+            this.cBAlojamiento.Size = new System.Drawing.Size(121, 24);
+            this.cBAlojamiento.Sorted = true;
+            this.cBAlojamiento.TabIndex = 9;
+            this.cBAlojamiento.TabStop = false;
             // 
             // btnaceptar
             // 
@@ -184,23 +160,32 @@
             this.btncancelar.Text = "CANCELAR";
             this.btncancelar.UseVisualStyleBackColor = false;
             // 
+            // cbClientes
+            // 
+            this.cbClientes.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.cbClientes.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbClientes.FormattingEnabled = true;
+            this.cbClientes.Location = new System.Drawing.Point(205, 225);
+            this.cbClientes.Name = "cbClientes";
+            this.cbClientes.Size = new System.Drawing.Size(121, 24);
+            this.cbClientes.TabIndex = 9;
+            // 
             // FcalendarioYdatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LabTP2.Properties.Resources.ciudad;
+            this.BackgroundImage = global::LabTP2.Properties.Resources.polimorfism;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(682, 427);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
-            this.Controls.Add(this.cBhabitacion);
-            this.Controls.Add(this.cBeshotel);
+            this.Controls.Add(this.cbClientes);
+            this.Controls.Add(this.cBAlojamiento);
             this.Controls.Add(this.tBcantPersonas);
             this.Controls.Add(this.tBnum);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tBdireccion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,6 +194,7 @@
             this.Name = "FcalendarioYdatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.FcalendarioYdatos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,17 +202,16 @@
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox tBdireccion;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tBnum;
-        private System.Windows.Forms.TextBox tBcantPersonas;
-        private System.Windows.Forms.CheckBox cBeshotel;
-        private System.Windows.Forms.ComboBox cBhabitacion;
-        private System.Windows.Forms.Button btnaceptar;
-        private System.Windows.Forms.Button btncancelar;
+        public System.Windows.Forms.MonthCalendar monthCalendar1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox tBnum;
+        public System.Windows.Forms.TextBox tBcantPersonas;
+        public System.Windows.Forms.ComboBox cBAlojamiento;
+        public System.Windows.Forms.Button btnaceptar;
+        public System.Windows.Forms.Button btncancelar;
+        public System.Windows.Forms.ComboBox cbClientes;
     }
 }

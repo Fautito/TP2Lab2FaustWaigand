@@ -263,6 +263,7 @@
             this.Name = "Fregistrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fregistrar";
+            this.Load += new System.EventHandler(this.Fregistrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,22 +271,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cBprovincia;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cBprovincia;
         public System.Windows.Forms.TextBox tBcorreo;
         public System.Windows.Forms.TextBox tBdireccion;
         public System.Windows.Forms.TextBox tBdni;
         public System.Windows.Forms.TextBox tBnombre;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox tBciudad;
         public System.Windows.Forms.TextBox tBtelefono;
-        private System.Windows.Forms.Button btnRegistar;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.ComboBox comboBox1;
-    }
-}
+        public System.Windows.Forms.Button btnRegistar;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.ComboBox comboBox1;
+    } 
+} 

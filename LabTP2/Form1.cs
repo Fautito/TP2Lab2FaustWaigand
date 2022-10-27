@@ -14,6 +14,7 @@ namespace LabTP2
     {
         Trivago gestor = new Trivago(100);
         Alojamiento[] alojamientos;
+        Alojamiento[] mostrarAlojamientos;
         public Fprincipal()
         {
             InitializeComponent();
@@ -22,14 +23,29 @@ namespace LabTP2
        
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Fregistrar fregistro = new Fregistrar();
-            fregistro.ShowDialog();
+            registrarCliente();
         }
 
+        void registrarCliente()
+        {
+            Fregistrar fregistro = new Fregistrar();
+            if (fregistro.ShowDialog() == DialogResult.OK)
+            {
+                Cliente c = new Cliente(fregistro.tBnombre.Text, Convert.ToInt32(fregistro.tBdni.Text), fregistro.tBdireccion.Text, fregistro.tBtelefono.Text);
+                gestor.RegistrarCliente(c);
+            }
+        }
+
+
+        int selectedRow = -1;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            selectedRow = e.RowIndex;
+            
             
         }
+
+        
 
         private void Fprincipal_Load(object sender, EventArgs e)
         {
@@ -49,13 +65,7 @@ namespace LabTP2
             alojamientos=gestor.MostrarAlojamientos();
             dataGridView1.ColumnCount = 2;
 
-            llenarDataGrid(alojamientos);
-            
-            
-            //queda pendiente formatear el datagrid con la cantidad de resultados de la busqueda
-            
-
-
+            llenarDataGrid();
         }
 
 
@@ -69,35 +79,40 @@ namespace LabTP2
             cBhabit.Enabled = cBalojamiento.SelectedIndex == 1;
             cBcamas.Visible = cBalojamiento.SelectedIndex == 2;
             cBcamas.Enabled = cBalojamiento.SelectedIndex == 2;
-            Alojamiento[] lista = null;
+            mostrarAlojamientos = null;
 
             switch (cBalojamiento.SelectedIndex)
             {
                 case 0:
-                    lista = gestor.MostrarAlojamientos();
+                    mostrarAlojamientos = gestor.MostrarAlojamientos();
                     break;
                 case 1:
                     Habitacion h = new Habitacion(cBhabit.SelectedIndex, "", cBestrellas.SelectedIndex+1, "");
-                    lista = gestor.MostrarAlojamientos(h);
+                    mostrarAlojamientos = gestor.MostrarAlojamientos(h);
                     break;
                 case 2:
                     Casa c = new Casa(cBcamas.SelectedIndex, "", new bool[] { false }, 1);
-                    lista = gestor.MostrarAlojamientos(c);
+                    mostrarAlojamientos = gestor.MostrarAlojamientos(c);
                     break;
             }
-            llenarDataGrid(lista);
             
+            llenarDataGrid(mostrarAlojamientos);
             
         }
 
-
-        void llenarDataGrid(Alojamiento[] alojamientos)
+        void llenarDataGrid(Alojamiento[] al)
         {
             dataGridView1.Rows.Clear();
-            foreach (Alojamiento a in alojamientos)
+            foreach (Alojamiento a in al)
             {
                 dataGridView1.Rows.Add(a.Direccion, a.PrecioPorDia());
             }
+            selectedRow = -1;
+            dataGridView1.ClearSelection();
+        }
+        void llenarDataGrid()
+        {
+            llenarDataGrid(alojamientos);
         }
 
         private void Fprincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -108,13 +123,55 @@ namespace LabTP2
         private void altaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAlojamiento fa = new fAlojamiento("agregar");
-            fa.ShowDialog();
+            fa.comboBox1.SelectedIndex = 0;
+            fa.comboBox2.SelectedIndex = 0;
+            if (fa.ShowDialog() == DialogResult.OK)
+            {
+                Alojamiento a;
+                
+                if (fa.comboBox1.SelectedIndex==1)
+                {
+                    bool[] serv = new bool[] { fa.chBCochera.Checked, fa.chBPileta.Checked, fa.chBWifi.Checked, fa.chBLimpieza.Checked, fa.chBDesayuno.Checked, fa.chBMascotas.Checked };
+                    a = new Casa(Convert.ToInt32(fa.numericUpDown1.Value), fa.tBDIreccion.Text, serv, Convert.ToInt32(fa.numericUpDown2.Value));
+                    gestor.AgregarAlojamiento(a);
+                }
+                else if(fa.comboBox1.SelectedIndex==0)
+                {
+                    
+                    a = new Habitacion(Convert.ToInt32(fa.numericUpDown1.Value), fa.tBDIreccion.Text,Convert.ToInt32(fa.comboBox2.SelectedIndex)+2, fa.tBNumHab.Text);
+                    gestor.AgregarAlojamiento(a);
+                }
+                alojamientos=gestor.MostrarAlojamientos();
+                llenarDataGrid();
+            }
+            cBalojamiento.SelectedIndex = 0;
+        }
+
+        private void bajaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            fAlojamiento fa = new fAlojamiento("baja");
+            foreach (Alojamiento a in alojamientos)
+            {
+                fa.cbAlojamientos.Items.Add(a.Direccion);
+            }
+            if (fa.ShowDialog() == DialogResult.No)
+            {
+                if (fa.cbAlojamientos.SelectedIndex >= 0)
+                {
+                    gestor.QuitarAlojamiento(alojamientos[fa.cbAlojamientos.SelectedIndex]);
+                }
+                alojamientos=gestor.MostrarAlojamientos();
+                llenarDataGrid();
+            }
+            cBalojamiento.SelectedIndex = 0;
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAlojamiento fa = new fAlojamiento("modif");
-            fa.ShowDialog();
+            //aca deberia cargar los datos del alojamiento en los elementos de la ventana y si habo cambios sobreescribir el alojamiento
+            //con gesto.modificarAlojamiento(indice del alojamiento, nuevo objeto alojamiento)
+            
         }
 
         private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,11 +179,7 @@ namespace LabTP2
             
         }
 
-        private void bajaToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            fAlojamiento fa = new fAlojamiento("baja");
-            fa.ShowDialog();
-        }
+        
 
         private void cBcamas_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -135,12 +188,70 @@ namespace LabTP2
 
         private void cBhabit_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             cBalojamiento_SelectedIndexChanged(sender, e);
         }
 
         private void cBestrellas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             cBalojamiento_SelectedIndexChanged(sender, e);
+        }
+
+
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FcalendarioYdatos fCyD=new FcalendarioYdatos();
+            if (selectedRow != -1)
+            {
+                Alojamiento al = mostrarAlojamientos[selectedRow];
+                foreach (Reserva r in gestor.Reservas)
+                {
+                    if (r.alojamiento.Equals(al))
+                    {
+                        for (int i = 0; i < r.Dias; i++)
+                        {
+                            fCyD.monthCalendar1.AddBoldedDate(r.FechaChekIn.AddDays(i));
+
+                        }
+                    }
+                    
+                }
+            fCyD.ShowDialog();
+            }
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FcalendarioYdatos fCyD = new FcalendarioYdatos();
+            Alojamiento a = null;
+            if (selectedRow != -1)
+            {
+                a = mostrarAlojamientos[selectedRow];
+                foreach (Cliente c in gestor.Clientes)
+                {
+                    fCyD.cbClientes.Items.Add(c.Nombre);
+                }
+                if (fCyD.ShowDialog() == DialogResult.OK)
+                {
+                    TimeSpan dif =fCyD.monthCalendar1.SelectionRange.End-fCyD.monthCalendar1.SelectionRange.Start;
+                    Reserva r = new Reserva((Cliente)gestor.Clientes[fCyD.cbClientes.SelectedIndex], DateTime.Today, fCyD.monthCalendar1.SelectionRange.Start,dif.Days+1, a);
+                    gestor.CrearReservas(r);
+                }
+            }
+            
+        }
+
+        private void bajaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Fregistro fr = new Fregistro();
+            foreach (Reserva r in gestor.Reservas)
+            {
+                fr.lBregistro.Items.Add($"{r.Cliente.Nombre}, {r.FechaChekIn:dd/MM} al {r.FechaChekOut:dd/MM} en {r.alojamiento.Direccion} ");
+            }
+            fr.ShowDialog();
         }
     }
 }

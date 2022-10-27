@@ -12,9 +12,15 @@ namespace LabTP2
 {
     public partial class FcalendarioYdatos : Form
     {
+        //no se puede inicializar el componente con parametro tipo alojamiento xq hay problemas de accesibilidad "el parametro tiene mas/menos accesibilidad que el metodo que lo utiliza"
         public FcalendarioYdatos()
         {
             InitializeComponent();
+        }
+
+        private void FcalendarioYdatos_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

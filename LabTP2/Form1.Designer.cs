@@ -60,7 +60,7 @@
             this.menuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(724, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "Menu";
             // 
@@ -81,7 +81,7 @@
             this.bajaToolStripMenuItem,
             this.modificarToolStripMenuItem});
             this.alojamientoToolStripMenuItem.Name = "alojamientoToolStripMenuItem";
-            this.alojamientoToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.alojamientoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alojamientoToolStripMenuItem.Text = "Alojamiento";
             // 
             // altaToolStripMenuItem
@@ -108,7 +108,7 @@
             // registrarToolStripMenuItem
             // 
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarToolStripMenuItem.Text = "Clientes";
             this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
             // 
@@ -120,31 +120,32 @@
             this.modificarToolStripMenuItem1,
             this.consultarToolStripMenuItem});
             this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reservasToolStripMenuItem.Text = "Reservas";
             // 
             // altaToolStripMenuItem1
             // 
             this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.altaToolStripMenuItem1.Text = "Alta";
             // 
             // bajaToolStripMenuItem1
             // 
             this.bajaToolStripMenuItem1.Name = "bajaToolStripMenuItem1";
-            this.bajaToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.bajaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.bajaToolStripMenuItem1.Text = "Baja";
+            this.bajaToolStripMenuItem1.Click += new System.EventHandler(this.bajaToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // cBalojamiento
@@ -201,18 +202,22 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(34, 138);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 15;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(560, 185);
             this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Column1
             // 
@@ -230,12 +235,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(66, 374);
+            this.button1.Location = new System.Drawing.Point(34, 373);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(69, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
+            this.button1.Text = "Reservar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cBcamas
             // 
@@ -264,7 +270,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::LabTP2.Properties.Resources.polimorfism;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(724, 453);
+            this.ClientSize = new System.Drawing.Size(774, 453);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cBcamas);

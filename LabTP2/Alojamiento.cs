@@ -27,6 +27,11 @@ namespace LabTP2
             reservas.Add(r);
         }
 
+        public Reserva[] mostrarReservas()
+        {
+            return (Reserva[])reservas.ToArray(typeof(Reserva));
+        }
+
         public void CancelarReserva(Reserva r)
         {
             reservas.RemoveAt(reservas.IndexOf(r));

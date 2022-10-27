@@ -28,15 +28,15 @@ namespace LabTP2
             Reservas = new ArrayList();
             //Alojamientos.Add(new Casa( 2, "almafuerte", new bool[] { true, false, true }, 2));
             //Alojamientos.Add(new Habitacion(3, "churruarin", 3, "4b"));
-
             //Clientes.Add(new Cliente("eduardo", 1, "lalala", "456"));
             //Clientes.Add(new Cliente("juancru", 2, "lele", "0303"));
+            if (fsReservas.Length > 0) Reservas = (ArrayList)bf.Deserialize(fsReservas);
+            fsReservas.Close();
             if (fsClientes.Length>0)Clientes = (ArrayList)bf.Deserialize(fsClientes);
             fsClientes.Close();
             if (fsAlojamientos.Length > 0) Alojamientos = (ArrayList)bf.Deserialize(fsAlojamientos);
             fsAlojamientos.Close();
-            if (fsReservas.Length > 0) Reservas = (ArrayList)bf.Deserialize(fsReservas);
-            fsReservas.Close();
+            
             
         }
 
@@ -54,10 +54,12 @@ namespace LabTP2
         {
             return (Reserva[])Reservas.ToArray();
         }
+
         public void CrearReservas(Reserva r)
         {
             Reservas.Add(r);
         }
+
         public void ModificarReservas(int i, Reserva r)
         {
             Reservas[i] = r;
@@ -68,6 +70,9 @@ namespace LabTP2
             Reservas.RemoveAt(Reservas.IndexOf(r));
         }
 
+
+
+
         //acciones conc clientes
         public void RegistrarCliente(Cliente c)
         {
@@ -75,8 +80,11 @@ namespace LabTP2
         }
         public Cliente[] MostrarCliente()
         {
-            return (Cliente[])Clientes.ToArray();
+            return (Cliente[])Clientes.ToArray(typeof(Cliente));
         }
+
+
+
 
         //acciones con alojamientos
         public Alojamiento[] MostrarAlojamientos(Alojamiento a)
@@ -108,6 +116,8 @@ namespace LabTP2
         {
             Alojamientos.Add(a);
         }
+
+        //falta palicar este metodo
         public void ModificarAlojamiento(int i,Alojamiento a)
         {
             Alojamientos[i] = a;
@@ -118,6 +128,10 @@ namespace LabTP2
             Alojamientos.RemoveAt(Alojamientos.IndexOf(a));
         }
 
+
+
+
+
         public void BackUp()
         {
             FileStream fsClientes = new FileStream(Application.StartupPath + "clientes.bin", FileMode.Truncate, FileAccess.Write);
@@ -127,9 +141,11 @@ namespace LabTP2
 
 
             ////por ahora solo esta serializando alojamientos
-            //bf.Serialize(fsClientes, Clientes);
             bf.Serialize(fsAlojamientos, Alojamientos);
-            //bf.Serialize(fsReservas, Reservas);
+            bf.Serialize(fsReservas, Reservas);
+            bf.Serialize(fsClientes, Clientes);
+            
+            
             fsReservas.Close();
             fsAlojamientos.Close();
             fsClientes.Close();
