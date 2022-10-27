@@ -15,6 +15,7 @@ namespace LabTP2
             this.c = c;
             this.fechaReserva = fechaRes;
             this.fechaCheckIn = fechaCheck;
+            this.fechaCheckOut = this.fechaCheckIn.AddDays(dias);
             this.dias = dias;
             this.alojamiento = aloj;
         }
@@ -29,7 +30,7 @@ namespace LabTP2
         private DateTime fechaCheckIn;
         public DateTime FechaChekIn { get { return fechaCheckIn; } }
         private DateTime fechaCheckOut;
-        public DateTime FechaChekOut { get { return fechaCheckOut; } }//debe devolver fechachein +dias
+        public DateTime FechaChekOut { get { return fechaCheckOut; } }
         private DateTime fechaReserva;
         public DateTime FechaReserva { get { return fechaReserva; } }
 

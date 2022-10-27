@@ -79,10 +79,55 @@ namespace LabTP2
         }
 
         //acciones con alojamientos
+        public Alojamiento[] MostrarAlojamientos(Alojamiento a)
+        {
+            Alojamiento[] aloj;
+            if (a is Casa)
+            {
+                Casa c = (Casa)a;
+                ArrayList res = new ArrayList();
+                foreach(Alojamiento casa in Alojamientos)
+                {
+                    if(casa is Casa)
+                    {
+                        Casa casa2 = (Casa)casa;
+                        if (casa2.Equals(c)) res.Add(casa2);
+                    }
+                    
+                }
+                aloj = (Alojamiento[])res.ToArray(typeof(Casa)) ;
+            }
+            else if (a is Habitacion)
+            {
+                Habitacion h = (Habitacion)a;
+                ArrayList res = new ArrayList();
+                foreach (Alojamiento hab in Alojamientos)
+                {
+                    if (hab is Habitacion)
+                    {
+                        Habitacion habitacion = (Habitacion)hab;
+                        if (habitacion.Equals(h)) res.Add(habitacion);
+                    }
+                    
+                }
+                aloj = (Alojamiento[])res.ToArray(typeof(Habitacion));
+            }
+            else
+            {
+                throw new Exception("tipo de propiedad invalido");
+            }
+
+            return aloj;
+        }
+
+
+        //metodo sobrecargado para el caso de q no deba filtrar la busqueda
         public Alojamiento[] MostrarAlojamientos()
         {
-            return (Alojamiento[])Alojamientos.ToArray();
+            Alojamiento[] a = (Alojamiento[])Alojamientos.ToArray(typeof(Alojamiento));
+            return a;
         }
+
         public void AgregarAlojamiento(Alojamiento a)
         {
             Alojamientos.Add(a);

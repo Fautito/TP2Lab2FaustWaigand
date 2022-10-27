@@ -48,6 +48,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.cBcamas = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -149,16 +150,19 @@
             // cBalojamiento
             // 
             this.cBalojamiento.BackColor = System.Drawing.Color.SteelBlue;
+            this.cBalojamiento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBalojamiento.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cBalojamiento.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBalojamiento.FormattingEnabled = true;
             this.cBalojamiento.Items.AddRange(new object[] {
+            "Todo",
             "Hotel",
             "Casa"});
-            this.cBalojamiento.Location = new System.Drawing.Point(173, 66);
+            this.cBalojamiento.Location = new System.Drawing.Point(34, 58);
             this.cBalojamiento.Name = "cBalojamiento";
             this.cBalojamiento.Size = new System.Drawing.Size(121, 24);
             this.cBalojamiento.TabIndex = 1;
+            this.cBalojamiento.SelectedIndexChanged += new System.EventHandler(this.cBalojamiento_SelectedIndexChanged);
             // 
             // cBestrellas
             // 
@@ -167,12 +171,14 @@
             this.cBestrellas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBestrellas.FormattingEnabled = true;
             this.cBestrellas.Items.AddRange(new object[] {
+            "Todos",
             "⭐⭐⭐",
             "⭐⭐"});
-            this.cBestrellas.Location = new System.Drawing.Point(329, 65);
+            this.cBestrellas.Location = new System.Drawing.Point(190, 57);
             this.cBestrellas.Name = "cBestrellas";
             this.cBestrellas.Size = new System.Drawing.Size(121, 24);
             this.cBestrellas.TabIndex = 2;
+            this.cBestrellas.SelectedIndexChanged += new System.EventHandler(this.cBestrellas_SelectedIndexChanged);
             // 
             // cBhabit
             // 
@@ -181,13 +187,15 @@
             this.cBhabit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBhabit.FormattingEnabled = true;
             this.cBhabit.Items.AddRange(new object[] {
+            "Todos",
             "Simple",
             "Doble",
             "Triple"});
-            this.cBhabit.Location = new System.Drawing.Point(487, 64);
+            this.cBhabit.Location = new System.Drawing.Point(348, 56);
             this.cBhabit.Name = "cBhabit";
             this.cBhabit.Size = new System.Drawing.Size(121, 24);
             this.cBhabit.TabIndex = 3;
+            this.cBhabit.SelectedIndexChanged += new System.EventHandler(this.cBhabit_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -227,6 +235,25 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // cBcamas
+            // 
+            this.cBcamas.BackColor = System.Drawing.Color.SteelBlue;
+            this.cBcamas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cBcamas.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBcamas.FormattingEnabled = true;
+            this.cBcamas.Items.AddRange(new object[] {
+            "Todos",
+            "1 cama",
+            "2 camas",
+            "3 camas",
+            "4 camas",
+            "5 camas"});
+            this.cBcamas.Location = new System.Drawing.Point(190, 87);
+            this.cBcamas.Name = "cBcamas";
+            this.cBcamas.Size = new System.Drawing.Size(121, 24);
+            this.cBcamas.TabIndex = 3;
+            this.cBcamas.SelectedIndexChanged += new System.EventHandler(this.cBcamas_SelectedIndexChanged);
+            // 
             // Fprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,10 +264,12 @@
             this.ClientSize = new System.Drawing.Size(724, 453);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cBcamas);
             this.Controls.Add(this.cBhabit);
             this.Controls.Add(this.cBestrellas);
             this.Controls.Add(this.cBalojamiento);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Fprincipal";
@@ -270,13 +299,14 @@
         private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cBalojamiento;
         private System.Windows.Forms.ComboBox cBestrellas;
         private System.Windows.Forms.ComboBox cBhabit;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cBalojamiento;
+        private System.Windows.Forms.ComboBox cBcamas;
     }
 }
 

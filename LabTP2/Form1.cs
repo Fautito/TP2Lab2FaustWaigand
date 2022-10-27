@@ -12,7 +12,8 @@ namespace LabTP2
 {
     public partial class Fprincipal : Form
     {
-        Trivago gestor;
+        Trivago gestor = new Trivago(100);
+        Alojamiento[] alojamientos;
         public Fprincipal()
         {
             InitializeComponent();
@@ -32,57 +33,69 @@ namespace LabTP2
 
         private void Fprincipal_Load(object sender, EventArgs e)
         {
+            cBalojamiento.SelectedIndex = 0;
+            cBestrellas.SelectedIndex = 0;
+            cBhabit.SelectedIndex = 0;
+            cBcamas.SelectedIndex = 0;
             FprecioBase fpb = new FprecioBase();
+
             decimal precio = 100;
             if (fpb.ShowDialog() == DialogResult.OK)
             {
-                precio = Convert.ToDecimal(fpb.tBprecioBase.Text);
+                precio = fpb.tBprecioBase.Text != "" ? Convert.ToDecimal(fpb.tBprecioBase.Text) : precio;
             }
             gestor = new Trivago(precio);
-            //DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
-            //DataGridViewColumn[] columnas = new DataGridViewColumn[]
-            //{
-            //    new DataGridViewColumn(cell),
-            //    new DataGridViewColumn(cell)
-            //};
-            //for(int i = 0; i < columnas.Length; i++)
-            //{
-            //    dataGridView1.Columns.Add(columnas[i]);
-            //}
+
+            alojamientos=gestor.MostrarAlojamientos();
             dataGridView1.ColumnCount = 2;
-            foreach(Alojamiento a in gestor.Alojamientos)
+
+            llenarDataGrid(alojamientos);
+            
+            
+            //queda pendiente formatear el datagrid con la cantidad de resultados de la busqueda
+            
+
+
+        }
+
+
+
+        private void cBalojamiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cBestrellas.Visible = cBalojamiento.SelectedIndex == 1;
+            cBestrellas.Enabled = cBalojamiento.SelectedIndex == 1;
+            cBhabit.Visible = cBalojamiento.SelectedIndex == 1;
+            cBhabit.Enabled = cBalojamiento.SelectedIndex == 1;
+            cBcamas.Visible = cBalojamiento.SelectedIndex == 2;
+            cBcamas.Enabled = cBalojamiento.SelectedIndex == 2;
+            Alojamiento[] lista = new Alojamiento[1];
+            switch (cBalojamiento.SelectedIndex)
+            {
+                case 0:
+                    lista = gestor.MostrarAlojamientos();
+                    break;
+                case 1:
+                    Habitacion h = new Habitacion(cBhabit.SelectedIndex + 1, "", cBestrellas.SelectedIndex + 2, "");
+                    lista = gestor.MostrarAlojamientos(h);
+                    break;
+                case 2:
+                    Casa c = new Casa(cBcamas.SelectedIndex + 1, "", new bool[] { false }, 1);
+                    lista = gestor.MostrarAlojamientos(c);
+                    break;
+            }
+            llenarDataGrid(lista);
+            
+            
+        }
+
+
+        void llenarDataGrid(Alojamiento[] alojamientos)
+        {
+            dataGridView1.Rows.Clear();
+            foreach (Alojamiento a in alojamientos)
             {
                 dataGridView1.Rows.Add(a.Direccion, a.PrecioPorDia());
             }
-            
-            
-            
-            //dataGridView1.ColumnHeadersVisible = true;
-            //dataGridView1.RowHeadersVisible = true;
-            //int alto = dataGridView1.ClientSize.Height;
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    row.Height = alto / dataGridView1.RowCount;
-            //    row.Resizable = DataGridViewTriState.False;
-            //}
-            //for (int c = 0; c < dataGridView1.Columns.Count; c++)
-            //{
-            //    DataGridViewImageColumn dgvc = new DataGridViewImageColumn();
-            //    dgvc.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            //    dgvc.FillWeight = 10;
-            //    dataGridView1.Columns.Add(dgvc);
-            //}
-            //int renglones = dataGridView1.RowCount = 8;
-            //for (int r = 0; r < renglones; r++)
-            //{
-            //    for (int c = 0; c < dataGridView1.ColumnCount; c++)
-            //    {
-            //        dataGridView1[c, r].Value = Properties.Resources.ciudad;
-            //    }
-            //}
-            
-
-
         }
 
         private void Fprincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,6 +124,21 @@ namespace LabTP2
         {
             fAlojamiento fa = new fAlojamiento("baja");
             fa.ShowDialog();
+        }
+
+        private void cBcamas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cBalojamiento_SelectedIndexChanged(sender, e);
+        }
+
+        private void cBhabit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cBalojamiento_SelectedIndexChanged(sender, e);
+        }
+
+        private void cBestrellas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cBalojamiento_SelectedIndexChanged(sender, e);
         }
     }
 }

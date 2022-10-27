@@ -27,5 +27,16 @@ namespace LabTP2
         {
             return Trivago.precioBase / 2;
         }
+
+        public override bool Equals(object obj)
+        {
+            Habitacion h = (Habitacion)obj;
+            return h.estrellas == this.estrellas && h.Capacidad == this.Capacidad;
+        }
+
+        public override int GetHashCode()
+        {
+            return 0;
+        }
     }
 }
