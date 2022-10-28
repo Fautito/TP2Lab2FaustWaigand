@@ -52,7 +52,7 @@ namespace LabTP2
 
         public Reserva[] MostrarReservas()
         {
-            return (Reserva[])Reservas.ToArray();
+            return (Reserva[])Reservas.ToArray(typeof(Reserva));
         }
 
         public void CrearReservas(Reserva r)

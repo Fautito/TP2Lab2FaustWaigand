@@ -48,6 +48,10 @@ namespace LabTP2
 
         abstract public decimal PrecioPorDia();
 
+        public override string ToString()
+        {
+            return this.Direccion;
+        }
 
     }
 }

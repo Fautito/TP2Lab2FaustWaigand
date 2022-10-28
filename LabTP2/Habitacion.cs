@@ -36,7 +36,7 @@ namespace LabTP2
                 Habitacion h = (Habitacion)obj;
                 return (h.estrellas == 0 && h.Capacidad == 0) || (h.estrellas == 0 && h.Capacidad == this.Capacidad) || (h.estrellas == this.estrellas && h.Capacidad == 0) || (this.estrellas == h.Estrellas & this.Capacidad == h.Capacidad);
             }
-            return ((Alojamiento)obj).Direccion == this.Direccion;
+            return obj == this;
         }
 
         public override int GetHashCode()

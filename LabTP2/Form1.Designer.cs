@@ -31,16 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fprincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alojamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.altaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAlojAlta = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAlojBaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuAlojModi = new System.Windows.Forms.ToolStripMenuItem();
             this.cBalojamiento = new System.Windows.Forms.ComboBox();
             this.cBestrellas = new System.Windows.Forms.ComboBox();
             this.cBhabit = new System.Windows.Forms.ComboBox();
@@ -49,6 +42,14 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.cBcamas = new System.Windows.Forms.ComboBox();
+            this.cleintesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reservasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuClienteRegistrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuClienteVer = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReservaAlta = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReservaBaja = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReservaModi = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuReservaConsu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,9 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuToolStripMenuItem});
+            this.menuToolStripMenuItem,
+            this.cleintesToolStripMenuItem,
+            this.reservasToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(774, 24);
@@ -67,86 +70,33 @@
             // menuToolStripMenuItem
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alojamientoToolStripMenuItem,
-            this.registrarToolStripMenuItem,
-            this.reservasToolStripMenuItem});
+            this.menuAlojAlta,
+            this.menuAlojBaja,
+            this.menuAlojModi});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "Menu";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.menuToolStripMenuItem.Text = "Alojamientos";
             // 
-            // alojamientoToolStripMenuItem
+            // menuAlojAlta
             // 
-            this.alojamientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem,
-            this.bajaToolStripMenuItem,
-            this.modificarToolStripMenuItem});
-            this.alojamientoToolStripMenuItem.Name = "alojamientoToolStripMenuItem";
-            this.alojamientoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alojamientoToolStripMenuItem.Text = "Alojamiento";
+            this.menuAlojAlta.Name = "menuAlojAlta";
+            this.menuAlojAlta.Size = new System.Drawing.Size(180, 22);
+            this.menuAlojAlta.Text = "Alta";
+            this.menuAlojAlta.Click += new System.EventHandler(this.menuAlojAlta_Click);
             // 
-            // altaToolStripMenuItem
+            // menuAlojBaja
             // 
-            this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.altaToolStripMenuItem.Text = "Alta";
-            this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
+            this.menuAlojBaja.Name = "menuAlojBaja";
+            this.menuAlojBaja.Size = new System.Drawing.Size(180, 22);
+            this.menuAlojBaja.Text = "Baja";
+            this.menuAlojBaja.Click += new System.EventHandler(this.menuAlojBaja_Click);
             // 
-            // bajaToolStripMenuItem
+            // menuAlojModi
             // 
-            this.bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
-            this.bajaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.bajaToolStripMenuItem.Text = "Baja";
-            this.bajaToolStripMenuItem.Click += new System.EventHandler(this.bajaToolStripMenuItem_Click_1);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar";
-            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
-            // 
-            // registrarToolStripMenuItem
-            // 
-            this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarToolStripMenuItem.Text = "Clientes";
-            this.registrarToolStripMenuItem.Click += new System.EventHandler(this.registrarToolStripMenuItem_Click);
-            // 
-            // reservasToolStripMenuItem
-            // 
-            this.reservasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem1,
-            this.bajaToolStripMenuItem1,
-            this.modificarToolStripMenuItem1,
-            this.consultarToolStripMenuItem});
-            this.reservasToolStripMenuItem.Name = "reservasToolStripMenuItem";
-            this.reservasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reservasToolStripMenuItem.Text = "Reservas";
-            // 
-            // altaToolStripMenuItem1
-            // 
-            this.altaToolStripMenuItem1.Name = "altaToolStripMenuItem1";
-            this.altaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.altaToolStripMenuItem1.Text = "Alta";
-            // 
-            // bajaToolStripMenuItem1
-            // 
-            this.bajaToolStripMenuItem1.Name = "bajaToolStripMenuItem1";
-            this.bajaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.bajaToolStripMenuItem1.Text = "Baja";
-            this.bajaToolStripMenuItem1.Click += new System.EventHandler(this.bajaToolStripMenuItem1_Click);
-            // 
-            // modificarToolStripMenuItem1
-            // 
-            this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.modificarToolStripMenuItem1.Text = "Modificar";
-            // 
-            // consultarToolStripMenuItem
-            // 
-            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.menuAlojModi.Name = "menuAlojModi";
+            this.menuAlojModi.Size = new System.Drawing.Size(180, 22);
+            this.menuAlojModi.Text = "Modificar";
+            this.menuAlojModi.Click += new System.EventHandler(this.menuAlojModi_Click);
             // 
             // cBalojamiento
             // 
@@ -263,6 +213,62 @@
             this.cBcamas.TabIndex = 3;
             this.cBcamas.SelectedIndexChanged += new System.EventHandler(this.cBcamas_SelectedIndexChanged);
             // 
+            // cleintesToolStripMenuItem
+            // 
+            this.cleintesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuClienteRegistrar,
+            this.menuClienteVer});
+            this.cleintesToolStripMenuItem.Name = "cleintesToolStripMenuItem";
+            this.cleintesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.cleintesToolStripMenuItem.Text = "Clientes";
+            // 
+            // reservasToolStripMenuItem1
+            // 
+            this.reservasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuReservaAlta,
+            this.menuReservaBaja,
+            this.menuReservaModi,
+            this.menuReservaConsu});
+            this.reservasToolStripMenuItem1.Name = "reservasToolStripMenuItem1";
+            this.reservasToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
+            this.reservasToolStripMenuItem1.Text = "Reservas";
+            // 
+            // menuClienteRegistrar
+            // 
+            this.menuClienteRegistrar.Name = "menuClienteRegistrar";
+            this.menuClienteRegistrar.Size = new System.Drawing.Size(180, 22);
+            this.menuClienteRegistrar.Text = "Registrar";
+            // 
+            // menuClienteVer
+            // 
+            this.menuClienteVer.Name = "menuClienteVer";
+            this.menuClienteVer.Size = new System.Drawing.Size(180, 22);
+            this.menuClienteVer.Text = "Ver Todos";
+            // 
+            // menuReservaAlta
+            // 
+            this.menuReservaAlta.Name = "menuReservaAlta";
+            this.menuReservaAlta.Size = new System.Drawing.Size(180, 22);
+            this.menuReservaAlta.Text = "Alta";
+            // 
+            // menuReservaBaja
+            // 
+            this.menuReservaBaja.Name = "menuReservaBaja";
+            this.menuReservaBaja.Size = new System.Drawing.Size(180, 22);
+            this.menuReservaBaja.Text = "Baja";
+            // 
+            // menuReservaModi
+            // 
+            this.menuReservaModi.Name = "menuReservaModi";
+            this.menuReservaModi.Size = new System.Drawing.Size(180, 22);
+            this.menuReservaModi.Text = "Modificar";
+            // 
+            // menuReservaConsu
+            // 
+            this.menuReservaConsu.Name = "menuReservaConsu";
+            this.menuReservaConsu.Size = new System.Drawing.Size(180, 22);
+            this.menuReservaConsu.Text = "Consultar";
+            // 
             // Fprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,16 +304,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alojamientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuAlojAlta;
+        private System.Windows.Forms.ToolStripMenuItem menuAlojBaja;
+        private System.Windows.Forms.ToolStripMenuItem menuAlojModi;
         private System.Windows.Forms.ComboBox cBestrellas;
         private System.Windows.Forms.ComboBox cBhabit;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -316,6 +315,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cBalojamiento;
         private System.Windows.Forms.ComboBox cBcamas;
+        private System.Windows.Forms.ToolStripMenuItem cleintesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuClienteRegistrar;
+        private System.Windows.Forms.ToolStripMenuItem menuClienteVer;
+        private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem menuReservaAlta;
+        private System.Windows.Forms.ToolStripMenuItem menuReservaBaja;
+        private System.Windows.Forms.ToolStripMenuItem menuReservaModi;
+        private System.Windows.Forms.ToolStripMenuItem menuReservaConsu;
     }
 }
 

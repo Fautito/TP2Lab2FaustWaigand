@@ -35,7 +35,7 @@ namespace LabTP2
                 Casa c = (Casa)obj;
                 return c.Capacidad == 0 | this.Capacidad == c.Capacidad;
             }
-            return ((Alojamiento)obj).Direccion == this.Direccion;
+            return obj == this;
         }
 
         public override int GetHashCode()

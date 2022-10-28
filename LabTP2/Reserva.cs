@@ -15,7 +15,7 @@ namespace LabTP2
             this.c = c;
             this.fechaReserva = fechaRes;
             this.fechaCheckIn = fechaCheck;
-            this.fechaCheckOut = this.fechaCheckIn.AddDays(dias);
+            this.fechaCheckOut = this.fechaCheckIn.AddDays(dias-1);
             this.dias = dias;
             this.alojamiento = aloj;
             alojamiento.Reservar(this);
