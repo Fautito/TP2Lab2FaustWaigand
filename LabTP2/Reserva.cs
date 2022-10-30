@@ -43,5 +43,10 @@ namespace LabTP2
         {
             return 0;
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0} a {1} fecha {2:dd/MM}",this.alojamiento.Direccion, this.Cliente.Nombre,this.fechaCheckIn);
+        }
     }
 }

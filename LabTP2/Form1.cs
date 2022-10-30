@@ -41,8 +41,6 @@ namespace LabTP2
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedRow = e.RowIndex;
-            
-            
         }
 
         
@@ -112,7 +110,7 @@ namespace LabTP2
         }
         void llenarDataGrid()
         {
-            llenarDataGrid(alojamientos);
+            llenarDataGrid(gestor.MostrarAlojamientos());
         }
 
         private void Fprincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -122,16 +120,10 @@ namespace LabTP2
 
         
 
-        
-
-        
-
         private void bajaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
         }
-
-        
 
         private void cBcamas_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -160,6 +152,7 @@ namespace LabTP2
         private void button1_Click(object sender, EventArgs e)
         {
             verReservas();
+
         }
 
         void verReservas()
@@ -175,6 +168,7 @@ namespace LabTP2
                         for (int i = 0; i < r.Dias; i++)
                         {
                             fCyD.monthCalendar1.AddBoldedDate(r.FechaChekIn.AddDays(i));
+                            
                         }
                     }
                 }
@@ -188,6 +182,7 @@ namespace LabTP2
                     Reserva r = new Reserva((Cliente)gestor.Clientes[fCyD.cbClientes.SelectedIndex], DateTime.Today, fCyD.monthCalendar1.SelectionRange.Start, dif.Days + 1, al);
                     gestor.CrearReservas(r);
                 }
+                
             }
         }
         private void bajaToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -221,7 +216,7 @@ namespace LabTP2
                     a = new Habitacion(Convert.ToInt32(fa.numericUpDown1.Value), fa.tBDIreccion.Text, Convert.ToInt32(fa.comboBox2.SelectedIndex) + 2, fa.tBNumHab.Text);
                     gestor.AgregarAlojamiento(a);
                 }
-                alojamientos = gestor.MostrarAlojamientos();
+                mostrarAlojamientos = gestor.MostrarAlojamientos();
                 llenarDataGrid();
             }
             cBalojamiento.SelectedIndex = 0;
@@ -230,7 +225,7 @@ namespace LabTP2
         private void menuAlojBaja_Click(object sender, EventArgs e)
         {
             fAlojamiento fa = new fAlojamiento("baja");
-            foreach (Alojamiento a in alojamientos)
+            foreach (Alojamiento a in gestor.MostrarAlojamientos())
             {
                 fa.cbAlojamientos.Items.Add(a);
             }
@@ -245,7 +240,7 @@ namespace LabTP2
                     }
                     gestor.QuitarAlojamiento(a);
                 }
-                alojamientos = gestor.MostrarAlojamientos();
+                mostrarAlojamientos = gestor.MostrarAlojamientos();
                 llenarDataGrid();
             }
             cBalojamiento.SelectedIndex = 0;
@@ -257,6 +252,53 @@ namespace LabTP2
             //aca deberia cargar los datos del alojamiento en los elementos de la ventana y si habo cambios sobreescribir el alojamiento
             //con gesto.modificarAlojamiento(indice del alojamiento, nuevo objeto alojamiento)
 
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void menuClienteRegistrar_Click(object sender, EventArgs e)
+        {
+            Fregistrar fr = new Fregistrar();
+            fr.ShowDialog();
+        }
+
+        private void menuClienteVer_Click(object sender, EventArgs e)
+        {
+            Fregistro fr= new Fregistro();
+            foreach(Cliente c in gestor.Clientes)
+            {
+                fr.lBregistro.Items.Add(c.Nombre);
+            }
+            fr.ShowDialog();
+        }
+
+        private void menuReservaConsu_Click(object sender, EventArgs e)
+        {
+            Fregistro fr = new Fregistro();
+            fr.lBregistro.Items.Clear();
+            LLenarList();
+
+            while (fr.ShowDialog() != DialogResult.Cancel)
+            {
+                
+
+                if (fr.lBregistro.SelectedItem!=null)
+                    gestor.Reservas.Remove((Reserva)fr.lBregistro.SelectedItem);
+
+                LLenarList();
+            }
+
+            void LLenarList()
+            {
+                fr.lBregistro.Items.Clear();
+                foreach (Reserva r in gestor.Reservas)
+                {
+                    fr.lBregistro.Items.Add(r);
+                }
+            }
         }
     }
 }

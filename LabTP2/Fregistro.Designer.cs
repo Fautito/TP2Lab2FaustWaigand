@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -45,12 +45,14 @@
             // 
             // bBaja
             // 
-            this.bBaja.Location = new System.Drawing.Point(187, 344);
+            this.bBaja.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.bBaja.Location = new System.Drawing.Point(187, 341);
             this.bBaja.Name = "bBaja";
-            this.bBaja.Size = new System.Drawing.Size(141, 23);
+            this.bBaja.Size = new System.Drawing.Size(141, 27);
             this.bBaja.TabIndex = 1;
             this.bBaja.Text = "Cancelar Reserva";
             this.bBaja.UseVisualStyleBackColor = true;
+            this.bBaja.Click += new System.EventHandler(this.bBaja_Click);
             // 
             // Fregistro
             // 

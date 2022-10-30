@@ -21,5 +21,16 @@ namespace LabTP2
         {
 
         }
+        Reserva r;
+        private void bBaja_Click(object sender, EventArgs e)
+        {
+            r = (Reserva)lBregistro.SelectedItem;
+            if(MessageBox.Show("Desea cancelar la reserva?", $"Cancelar reserva en {r.alojamiento.Direccion}", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                lBregistro.SelectedItem = null;
+            }
+        }
+
+        
     }
 }
