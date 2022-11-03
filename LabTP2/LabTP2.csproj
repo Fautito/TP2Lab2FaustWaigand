@@ -61,6 +61,12 @@
     <Compile Include="FcalendarioYdatos.Designer.cs">
       <DependentUpon>FcalendarioYdatos.cs</DependentUpon>
     </Compile>
+    <Compile Include="fGaleria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGaleria.Designer.cs">
+      <DependentUpon>fGaleria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FcalendarioYdatos.resx">
       <DependentUpon>FcalendarioYdatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGaleria.resx">
+      <DependentUpon>fGaleria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -145,6 +154,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\polimorfism.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus-PNG-Transparent-Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\112-1121065_plus-sign-in-circular-outline-icons-free-transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

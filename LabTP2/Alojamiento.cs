@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,9 +17,9 @@ namespace LabTP2
             this.direccion = direccion;
 
         }
-        
-        //imagenes
 
+        //imagenes
+        public List<Image> listaImagenes = new List<Image>();
 
         //reservas
         ArrayList reservas = new ArrayList();

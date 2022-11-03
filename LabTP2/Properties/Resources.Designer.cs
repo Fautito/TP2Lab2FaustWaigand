@@ -63,6 +63,16 @@ namespace LabTP2.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _112_1121065_plus_sign_in_circular_outline_icons_free_transparent {
+            get {
+                object obj = ResourceManager.GetObject("112-1121065_plus-sign-in-circular-outline-icons-free-transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnaceptar {
             get {
                 object obj = ResourceManager.GetObject("btnaceptar", resourceCulture);
@@ -96,6 +106,16 @@ namespace LabTP2.Properties {
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plus_PNG_Transparent_Image {
+            get {
+                object obj = ResourceManager.GetObject("Plus-PNG-Transparent-Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -40,6 +40,8 @@
             this.btnaceptar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.cbClientes = new System.Windows.Forms.ComboBox();
+            this.pbImagenes = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -170,6 +172,16 @@
             this.cbClientes.Size = new System.Drawing.Size(121, 24);
             this.cbClientes.TabIndex = 9;
             // 
+            // pbImagenes
+            // 
+            this.pbImagenes.Location = new System.Drawing.Point(383, 218);
+            this.pbImagenes.Name = "pbImagenes";
+            this.pbImagenes.Size = new System.Drawing.Size(252, 120);
+            this.pbImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagenes.TabIndex = 12;
+            this.pbImagenes.TabStop = false;
+            this.pbImagenes.Click += new System.EventHandler(this.pbImagenes_Click);
+            // 
             // FcalendarioYdatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -177,6 +189,7 @@
             this.BackgroundImage = global::LabTP2.Properties.Resources.polimorfism;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(682, 427);
+            this.Controls.Add(this.pbImagenes);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.cbClientes);
@@ -188,6 +201,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -195,6 +209,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.FcalendarioYdatos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +228,6 @@
         public System.Windows.Forms.Button btnaceptar;
         public System.Windows.Forms.Button btncancelar;
         public System.Windows.Forms.ComboBox cbClientes;
+        public System.Windows.Forms.PictureBox pbImagenes;
     }
 }

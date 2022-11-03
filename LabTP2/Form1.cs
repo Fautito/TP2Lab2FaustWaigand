@@ -172,17 +172,26 @@ namespace LabTP2
                         }
                     }
                 }
+                fCyD.imagenes = al.listaImagenes;
+                if (fCyD.imagenes.Count>0)
+                {
+                    fCyD.pbImagenes.Image = fCyD.imagenes[0];
+                }
+            
                 foreach (Cliente c in gestor.Clientes)
                 {
                     fCyD.cbClientes.Items.Add(c.Nombre);
                 }
                 if (fCyD.ShowDialog() == DialogResult.OK)
                 {
-                    TimeSpan dif = fCyD.monthCalendar1.SelectionRange.End - fCyD.monthCalendar1.SelectionRange.Start;
-                    Reserva r = new Reserva((Cliente)gestor.Clientes[fCyD.cbClientes.SelectedIndex], DateTime.Today, fCyD.monthCalendar1.SelectionRange.Start, dif.Days + 1, al);
-                    gestor.CrearReservas(r);
+                        TimeSpan dif = fCyD.monthCalendar1.SelectionRange.End - fCyD.monthCalendar1.SelectionRange.Start;
+                    if (dif.Days>0)
+                    {
+                        Reserva r = new Reserva((Cliente)gestor.Clientes[fCyD.cbClientes.SelectedIndex], DateTime.Today, fCyD.monthCalendar1.SelectionRange.Start, dif.Days + 1, al);
+                        gestor.CrearReservas(r);
+
+                    }
                 }
-                
             }
         }
         private void bajaToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -202,7 +211,7 @@ namespace LabTP2
             fa.comboBox2.SelectedIndex = 0;
             if (fa.ShowDialog() == DialogResult.OK)
             {
-                Alojamiento a;
+                Alojamiento a = null; ;
 
                 if (fa.comboBox1.SelectedIndex == 1)
                 {
@@ -216,11 +225,15 @@ namespace LabTP2
                     a = new Habitacion(Convert.ToInt32(fa.numericUpDown1.Value), fa.tBDIreccion.Text, Convert.ToInt32(fa.comboBox2.SelectedIndex) + 2, fa.tBNumHab.Text);
                     gestor.AgregarAlojamiento(a);
                 }
+                a.listaImagenes = fa.listaimagenes;
                 mostrarAlojamientos = gestor.MostrarAlojamientos();
                 llenarDataGrid();
             }
             cBalojamiento.SelectedIndex = 0;
         }
+
+        
+
 
         private void menuAlojBaja_Click(object sender, EventArgs e)
         {
@@ -249,6 +262,38 @@ namespace LabTP2
         private void menuAlojModi_Click(object sender, EventArgs e)
         {
             fAlojamiento fa = new fAlojamiento("modif");
+            foreach (Alojamiento a in gestor.MostrarAlojamientos())
+            {
+                fa.cbAlojamientos.Items.Add(a);
+            }
+            
+            if (fa.ShowDialog() == DialogResult.Yes)
+            {
+                {
+                    Alojamiento a = null;
+
+                    if (fa.comboBox1.SelectedIndex == 1)
+                    {
+                        bool[] serv = new bool[] { fa.chBCochera.Checked, fa.chBPileta.Checked, fa.chBWifi.Checked, fa.chBLimpieza.Checked, fa.chBDesayuno.Checked, fa.chBMascotas.Checked };
+                        a = new Casa(Convert.ToInt32(fa.numericUpDown1.Value), fa.tBDIreccion.Text, serv, Convert.ToInt32(fa.numericUpDown2.Value));
+                        gestor.Alojamientos[fa.cbAlojamientos.SelectedIndex] = a;
+                        //gestor.Alojamientos[fa.cbAlojamientos.SelectedIndex]= a;
+                    }
+                    else if (fa.comboBox1.SelectedIndex == 0)
+                    {
+
+                        a = new Habitacion(Convert.ToInt32(fa.numericUpDown1.Value), fa.tBDIreccion.Text, Convert.ToInt32(fa.comboBox2.SelectedIndex) + 2, fa.tBNumHab.Text);
+                        //alojamientos[fa.cbAlojamientos.SelectedIndex] = a;
+                        gestor.Alojamientos[fa.cbAlojamientos.SelectedIndex] = a;
+
+                    }
+                    a.listaImagenes = fa.listaimagenes;
+                    mostrarAlojamientos = gestor.MostrarAlojamientos();
+                    llenarDataGrid();
+                }
+            }
+
+
             //aca deberia cargar los datos del alojamiento en los elementos de la ventana y si habo cambios sobreescribir el alojamiento
             //con gesto.modificarAlojamiento(indice del alojamiento, nuevo objeto alojamiento)
 

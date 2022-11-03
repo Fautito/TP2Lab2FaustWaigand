@@ -55,6 +55,8 @@
             this.bModif = new System.Windows.Forms.Button();
             this.bCancel = new System.Windows.Forms.Button();
             this.bEliminar = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.lAgregarImagen = new System.Windows.Forms.Label();
             this.gbCasa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.gbHotel.SuspendLayout();
@@ -361,7 +363,7 @@
             this.bModif.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.bModif.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bModif.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.bModif.Location = new System.Drawing.Point(305, 105);
+            this.bModif.Location = new System.Drawing.Point(305, 134);
             this.bModif.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.bModif.Name = "bModif";
             this.bModif.Size = new System.Drawing.Size(88, 23);
@@ -395,12 +397,31 @@
             this.bEliminar.Text = "Dar Baja";
             this.bEliminar.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // lAgregarImagen
+            // 
+            this.lAgregarImagen.Image = ((System.Drawing.Image)(resources.GetObject("lAgregarImagen.Image")));
+            this.lAgregarImagen.Location = new System.Drawing.Point(333, 277);
+            this.lAgregarImagen.MaximumSize = new System.Drawing.Size(60, 60);
+            this.lAgregarImagen.MinimumSize = new System.Drawing.Size(20, 20);
+            this.lAgregarImagen.Name = "lAgregarImagen";
+            this.lAgregarImagen.Size = new System.Drawing.Size(60, 60);
+            this.lAgregarImagen.TabIndex = 9;
+            this.lAgregarImagen.UseCompatibleTextRendering = true;
+            this.lAgregarImagen.UseMnemonic = false;
+            this.lAgregarImagen.Click += new System.EventHandler(this.lAgregarImagen_Click);
+            // 
             // fAlojamiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(433, 450);
+            this.Controls.Add(this.lAgregarImagen);
             this.Controls.Add(this.bCancel);
             this.Controls.Add(this.bEliminar);
             this.Controls.Add(this.bModif);
@@ -459,5 +480,7 @@
         public System.Windows.Forms.Button bModif;
         public System.Windows.Forms.Button bCancel;
         public System.Windows.Forms.Button bEliminar;
+        private System.Windows.Forms.Label lAgregarImagen;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

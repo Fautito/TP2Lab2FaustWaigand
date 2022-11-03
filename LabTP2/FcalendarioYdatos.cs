@@ -17,10 +17,20 @@ namespace LabTP2
         {
             InitializeComponent();
         }
-
+        public List<Image> imagenes = null;
         private void FcalendarioYdatos_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void pbImagenes_Click(object sender, EventArgs e)
+        {
+            if (imagenes.Count>0)
+            {
+                fGaleria fg = new fGaleria(imagenes);
+                fg.Show();
+
+            }
         }
     }
 }
