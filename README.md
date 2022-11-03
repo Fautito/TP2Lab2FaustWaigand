@@ -9,3 +9,4 @@ podria servir que cada ver q cambie un combo box, recorrar el gestor.MostrarAloj
 - revisar y limpar todos los cruds y las ventanas
 - ~~ver tema de la carga de imagenes y como mostrarlas~~
 - agregar el calculo del precio por dia segun coso
+- hacer que no se pueda reservar casa por menos dias que los dias minimos
