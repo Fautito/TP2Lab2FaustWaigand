@@ -1,4 +1,4 @@
-# TP2Lab2FaustWaigand
+# TP2Lab2FaustWaigand #
 
 #Falta Arreglar:
 
@@ -7,4 +7,4 @@
 podria servir que cada ver q cambie un combo box, recorrar el gestor.MostrarAlojamientos() y pregunte si cumple con las condiciones y recien ahi lo agregue al listbox
 - al momento de eliminar una reserva la ventana no deberia pestañear, fili habia explicado como hacer eso, no tener la necesidad e cerrar la ventana y que se vuelva a abrir
 - revisar y limpar todos los cruds y las ventanas
-- ver tema de la carga de imagenes y como mostrarlas
+- ~~ver tema de la carga de imagenes y como mostrarlas~~
