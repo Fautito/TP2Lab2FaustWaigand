@@ -10,3 +10,5 @@ podria servir que cada ver q cambie un combo box, recorrar el gestor.MostrarAloj
 - ~~ver tema de la carga de imagenes y como mostrarlas~~
 - agregar el calculo del precio por dia segun coso
 - hacer que no se pueda reservar casa por menos dias que los dias minimos
+- controlar que no se solapen las fechas de reserva
+- arreglar el formulario del calendario y hacer que se pueda elegir el alojamiento con un combobox, y al abrir el formulario tener el alojamiento previamente seleccionado(para poder elegir el alojamiento desde reservas>alta) y que al cambiar el combobox se actualicen las reservas en el calendario
