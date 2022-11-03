@@ -173,7 +173,7 @@ namespace LabTP2
                     }
                 }
                 fCyD.imagenes = al.listaImagenes;
-                if (fCyD.imagenes.Count>0)
+                if (fCyD.imagenes!=null)
                 {
                     fCyD.pbImagenes.Image = fCyD.imagenes[0];
                 }

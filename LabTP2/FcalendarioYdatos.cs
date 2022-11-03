@@ -25,7 +25,7 @@ namespace LabTP2
 
         private void pbImagenes_Click(object sender, EventArgs e)
         {
-            if (imagenes.Count>0)
+            if (imagenes!=null)
             {
                 fGaleria fg = new fGaleria(imagenes);
                 fg.Show();

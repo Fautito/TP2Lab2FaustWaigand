@@ -166,7 +166,7 @@ namespace LabTP2
 
                 
                 Image image = Image.FromFile(path);
-                if (listaimagenes.Count <= 5)
+                if (listaimagenes!=null && listaimagenes.Count <= 5)
                 {
                     listaimagenes.Add(image);
 
