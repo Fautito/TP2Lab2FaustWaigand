@@ -38,18 +38,15 @@
             this.menuClienteRegistrar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuClienteVer = new System.Windows.Forms.ToolStripMenuItem();
             this.reservasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuReservaAlta = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuReservaBaja = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuReservaModi = new System.Windows.Forms.ToolStripMenuItem();
             this.menuReservaConsu = new System.Windows.Forms.ToolStripMenuItem();
             this.cBalojamiento = new System.Windows.Forms.ComboBox();
             this.cBestrellas = new System.Windows.Forms.ComboBox();
             this.cBhabit = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.cBcamas = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +60,7 @@
             this.reservasToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(565, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "Menu";
             // 
@@ -80,21 +77,21 @@
             // menuAlojAlta
             // 
             this.menuAlojAlta.Name = "menuAlojAlta";
-            this.menuAlojAlta.Size = new System.Drawing.Size(125, 22);
+            this.menuAlojAlta.Size = new System.Drawing.Size(180, 22);
             this.menuAlojAlta.Text = "Alta";
             this.menuAlojAlta.Click += new System.EventHandler(this.menuAlojAlta_Click);
             // 
             // menuAlojBaja
             // 
             this.menuAlojBaja.Name = "menuAlojBaja";
-            this.menuAlojBaja.Size = new System.Drawing.Size(125, 22);
+            this.menuAlojBaja.Size = new System.Drawing.Size(180, 22);
             this.menuAlojBaja.Text = "Baja";
             this.menuAlojBaja.Click += new System.EventHandler(this.menuAlojBaja_Click);
             // 
             // menuAlojModi
             // 
             this.menuAlojModi.Name = "menuAlojModi";
-            this.menuAlojModi.Size = new System.Drawing.Size(125, 22);
+            this.menuAlojModi.Size = new System.Drawing.Size(180, 22);
             this.menuAlojModi.Text = "Modificar";
             this.menuAlojModi.Click += new System.EventHandler(this.menuAlojModi_Click);
             // 
@@ -110,50 +107,29 @@
             // menuClienteRegistrar
             // 
             this.menuClienteRegistrar.Name = "menuClienteRegistrar";
-            this.menuClienteRegistrar.Size = new System.Drawing.Size(124, 22);
+            this.menuClienteRegistrar.Size = new System.Drawing.Size(180, 22);
             this.menuClienteRegistrar.Text = "Registrar";
             this.menuClienteRegistrar.Click += new System.EventHandler(this.menuClienteRegistrar_Click);
             // 
             // menuClienteVer
             // 
             this.menuClienteVer.Name = "menuClienteVer";
-            this.menuClienteVer.Size = new System.Drawing.Size(124, 22);
+            this.menuClienteVer.Size = new System.Drawing.Size(180, 22);
             this.menuClienteVer.Text = "Ver Todos";
             this.menuClienteVer.Click += new System.EventHandler(this.menuClienteVer_Click);
             // 
             // reservasToolStripMenuItem1
             // 
             this.reservasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuReservaAlta,
-            this.menuReservaBaja,
-            this.menuReservaModi,
             this.menuReservaConsu});
             this.reservasToolStripMenuItem1.Name = "reservasToolStripMenuItem1";
             this.reservasToolStripMenuItem1.Size = new System.Drawing.Size(64, 20);
             this.reservasToolStripMenuItem1.Text = "Reservas";
             // 
-            // menuReservaAlta
-            // 
-            this.menuReservaAlta.Name = "menuReservaAlta";
-            this.menuReservaAlta.Size = new System.Drawing.Size(125, 22);
-            this.menuReservaAlta.Text = "Alta";
-            // 
-            // menuReservaBaja
-            // 
-            this.menuReservaBaja.Name = "menuReservaBaja";
-            this.menuReservaBaja.Size = new System.Drawing.Size(125, 22);
-            this.menuReservaBaja.Text = "Baja";
-            // 
-            // menuReservaModi
-            // 
-            this.menuReservaModi.Name = "menuReservaModi";
-            this.menuReservaModi.Size = new System.Drawing.Size(125, 22);
-            this.menuReservaModi.Text = "Modificar";
-            // 
             // menuReservaConsu
             // 
             this.menuReservaConsu.Name = "menuReservaConsu";
-            this.menuReservaConsu.Size = new System.Drawing.Size(125, 22);
+            this.menuReservaConsu.Size = new System.Drawing.Size(180, 22);
             this.menuReservaConsu.Text = "Consultar";
             this.menuReservaConsu.Click += new System.EventHandler(this.menuReservaConsu_Click);
             // 
@@ -223,27 +199,11 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 15;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(487, 185);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 1F;
-            this.Column1.HeaderText = "Imagen";
-            this.Column1.Name = "Column1";
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 120;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 10F;
-            this.Column2.HeaderText = "Descripcion";
-            this.Column2.Name = "Column2";
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column2.Width = 350;
             // 
             // button1
             // 
@@ -277,6 +237,22 @@
             this.cBcamas.TabIndex = 3;
             this.cBcamas.SelectedIndexChanged += new System.EventHandler(this.cBcamas_SelectedIndexChanged);
             // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 1F;
+            this.Column1.HeaderText = "Direccion";
+            this.Column1.Name = "Column1";
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column1.Width = 120;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 10F;
+            this.Column2.HeaderText = "Precio por Dia";
+            this.Column2.Name = "Column2";
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column2.Width = 350;
+            // 
             // Fprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,7 +260,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = global::LabTP2.Properties.Resources.polimorfism;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(774, 453);
+            this.ClientSize = new System.Drawing.Size(565, 453);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cBcamas);
@@ -325,9 +301,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuClienteRegistrar;
         private System.Windows.Forms.ToolStripMenuItem menuClienteVer;
         private System.Windows.Forms.ToolStripMenuItem reservasToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem menuReservaAlta;
-        private System.Windows.Forms.ToolStripMenuItem menuReservaBaja;
-        private System.Windows.Forms.ToolStripMenuItem menuReservaModi;
         private System.Windows.Forms.ToolStripMenuItem menuReservaConsu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

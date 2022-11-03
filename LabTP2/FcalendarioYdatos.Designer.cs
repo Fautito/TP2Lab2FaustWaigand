@@ -31,16 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FcalendarioYdatos));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tBnum = new System.Windows.Forms.TextBox();
-            this.tBcantPersonas = new System.Windows.Forms.TextBox();
-            this.cBAlojamiento = new System.Windows.Forms.ComboBox();
             this.btnaceptar = new System.Windows.Forms.Button();
             this.btncancelar = new System.Windows.Forms.Button();
             this.cbClientes = new System.Windows.Forms.ComboBox();
             this.pbImagenes = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lAlojElegido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagenes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,77 +58,11 @@
             this.label1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Location = new System.Drawing.Point(133, 228);
+            this.label1.Location = new System.Drawing.Point(119, 286);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cliente";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Location = new System.Drawing.Point(111, 260);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Numero : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Location = new System.Drawing.Point(38, 291);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Tipo de habitacion : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label4.Location = new System.Drawing.Point(8, 318);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Cantidad de habitantes : ";
-            // 
-            // tBnum
-            // 
-            this.tBnum.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tBnum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBnum.Location = new System.Drawing.Point(205, 260);
-            this.tBnum.Name = "tBnum";
-            this.tBnum.Size = new System.Drawing.Size(71, 23);
-            this.tBnum.TabIndex = 6;
-            // 
-            // tBcantPersonas
-            // 
-            this.tBcantPersonas.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tBcantPersonas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tBcantPersonas.Location = new System.Drawing.Point(205, 315);
-            this.tBcantPersonas.Name = "tBcantPersonas";
-            this.tBcantPersonas.Size = new System.Drawing.Size(41, 23);
-            this.tBcantPersonas.TabIndex = 7;
-            // 
-            // cBAlojamiento
-            // 
-            this.cBAlojamiento.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.cBAlojamiento.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cBAlojamiento.FormattingEnabled = true;
-            this.cBAlojamiento.Location = new System.Drawing.Point(205, 288);
-            this.cBAlojamiento.Name = "cBAlojamiento";
-            this.cBAlojamiento.Size = new System.Drawing.Size(121, 24);
-            this.cBAlojamiento.Sorted = true;
-            this.cBAlojamiento.TabIndex = 9;
-            this.cBAlojamiento.TabStop = false;
             // 
             // btnaceptar
             // 
@@ -155,7 +85,7 @@
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btncancelar.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btncancelar.Location = new System.Drawing.Point(111, 359);
+            this.btncancelar.Location = new System.Drawing.Point(211, 359);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(101, 29);
             this.btncancelar.TabIndex = 11;
@@ -167,7 +97,7 @@
             this.cbClientes.BackColor = System.Drawing.Color.LightSeaGreen;
             this.cbClientes.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbClientes.FormattingEnabled = true;
-            this.cbClientes.Location = new System.Drawing.Point(205, 225);
+            this.cbClientes.Location = new System.Drawing.Point(191, 283);
             this.cbClientes.Name = "cbClientes";
             this.cbClientes.Size = new System.Drawing.Size(121, 24);
             this.cbClientes.TabIndex = 9;
@@ -182,6 +112,29 @@
             this.pbImagenes.TabStop = false;
             this.pbImagenes.Click += new System.EventHandler(this.pbImagenes_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Location = new System.Drawing.Point(88, 245);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 18);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Alojamiento";
+            // 
+            // lAlojElegido
+            // 
+            this.lAlojElegido.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.lAlojElegido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lAlojElegido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lAlojElegido.Location = new System.Drawing.Point(191, 245);
+            this.lAlojElegido.Name = "lAlojElegido";
+            this.lAlojElegido.Size = new System.Drawing.Size(149, 18);
+            this.lAlojElegido.TabIndex = 14;
+            this.lAlojElegido.Text = "Alojamiento";
+            // 
             // FcalendarioYdatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,16 +142,12 @@
             this.BackgroundImage = global::LabTP2.Properties.Resources.polimorfism;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(682, 427);
+            this.Controls.Add(this.lAlojElegido);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pbImagenes);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
             this.Controls.Add(this.cbClientes);
-            this.Controls.Add(this.cBAlojamiento);
-            this.Controls.Add(this.tBcantPersonas);
-            this.Controls.Add(this.tBnum);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.DoubleBuffered = true;
@@ -219,15 +168,11 @@
 
         public System.Windows.Forms.MonthCalendar monthCalendar1;
         public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox tBnum;
-        public System.Windows.Forms.TextBox tBcantPersonas;
-        public System.Windows.Forms.ComboBox cBAlojamiento;
         public System.Windows.Forms.Button btnaceptar;
         public System.Windows.Forms.Button btncancelar;
         public System.Windows.Forms.ComboBox cbClientes;
         public System.Windows.Forms.PictureBox pbImagenes;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lAlojElegido;
     }
 }

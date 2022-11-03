@@ -13,7 +13,7 @@ namespace LabTP2
     public partial class Fprincipal : Form
     {
         Trivago gestor = new Trivago(100);
-        Alojamiento[] alojamientos;
+        
         Alojamiento[] mostrarAlojamientos;
         public Fprincipal()
         {
@@ -60,7 +60,7 @@ namespace LabTP2
             }
             gestor = new Trivago(precio);
 
-            alojamientos=gestor.MostrarAlojamientos();
+            
             dataGridView1.ColumnCount = 2;
 
             llenarDataGrid();
@@ -103,7 +103,7 @@ namespace LabTP2
             dataGridView1.Rows.Clear();
             foreach (Alojamiento a in al)
             {
-                dataGridView1.Rows.Add(a.Direccion, a.PrecioPorDia());
+                dataGridView1.Rows.Add(a.Direccion, $"${a.PrecioPorDia().ToString("0.00")}");
             }
             selectedRow = -1;
             dataGridView1.ClearSelection();
@@ -160,18 +160,10 @@ namespace LabTP2
             FcalendarioYdatos fCyD = new FcalendarioYdatos();
             if (selectedRow != -1)
             {
+                
                 Alojamiento al = mostrarAlojamientos[selectedRow];
-                foreach (Reserva r in gestor.Reservas)
-                {
-                    if (r.alojamiento.Equals(al))
-                    {
-                        for (int i = 0; i < r.Dias; i++)
-                        {
-                            fCyD.monthCalendar1.AddBoldedDate(r.FechaChekIn.AddDays(i));
-                            
-                        }
-                    }
-                }
+                fCyD.lAlojElegido.Text = $"{al.Direccion}";
+                reservasDelAlojamiento(al);
                 fCyD.imagenes = al.listaImagenes;
                 if (fCyD.imagenes!=null)
                 {
@@ -184,8 +176,16 @@ namespace LabTP2
                 }
                 if (fCyD.ShowDialog() == DialogResult.OK)
                 {
-                        TimeSpan dif = fCyD.monthCalendar1.SelectionRange.End - fCyD.monthCalendar1.SelectionRange.Start;
-                    if (dif.Days>0)
+                    TimeSpan dif = fCyD.monthCalendar1.SelectionRange.End - fCyD.monthCalendar1.SelectionRange.Start;
+                    bool seSolapan = false;
+                    //for(DateTime i= fCyD.monthCalendar1.SelectionRange.Start;i<= fCyD.monthCalendar1.SelectionRange.End; i.AddDays(1))
+                    //{
+                    //    foreach(DateTime d in fCyD.monthCalendar1.BoldedDates)
+                    //    {
+                    //        if(d==i) seSolapan=true;    
+                    //    }
+                    //}
+                    if (dif.Days>0 && fCyD.cbClientes.SelectedIndex!=-1 && seSolapan==false)
                     {
                         Reserva r = new Reserva((Cliente)gestor.Clientes[fCyD.cbClientes.SelectedIndex], DateTime.Today, fCyD.monthCalendar1.SelectionRange.Start, dif.Days + 1, al);
                         gestor.CrearReservas(r);
@@ -193,7 +193,24 @@ namespace LabTP2
                     }
                 }
             }
+
+            void reservasDelAlojamiento(Alojamiento al)
+            {
+                foreach (Reserva r in al.mostrarReservas())
+                {
+                    if (r.alojamiento.Equals(al))
+                    {
+                        for (int i = 0; i < r.Dias; i++)
+                        {
+                            fCyD.monthCalendar1.AddBoldedDate(r.FechaChekIn.AddDays(i));
+
+                        }
+                    }
+                }
+            }
         }
+
+
         private void bajaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Fregistro fr = new Fregistro();
@@ -307,31 +324,42 @@ namespace LabTP2
         private void menuClienteRegistrar_Click(object sender, EventArgs e)
         {
             Fregistrar fr = new Fregistrar();
-            fr.ShowDialog();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                Cliente c = new Cliente(fr.tBnombre.Text, Convert.ToInt32(fr.tBdni.Text), fr.tBdireccion.Text, fr.tBtelefono.Text);
+                gestor.RegistrarCliente(c);
+            }
         }
 
         private void menuClienteVer_Click(object sender, EventArgs e)
         {
             Fregistro fr= new Fregistro();
-            foreach(Cliente c in gestor.Clientes)
+            fr.bBaja.Enabled = false;
+            fr.bBaja.Visible = false;
+            foreach (Cliente c in gestor.Clientes)
             {
                 fr.lBregistro.Items.Add(c.Nombre);
             }
-            fr.ShowDialog();
+            if (fr.ShowDialog() == DialogResult.OK) { }
+            
         }
 
         private void menuReservaConsu_Click(object sender, EventArgs e)
         {
             Fregistro fr = new Fregistro();
-            fr.lBregistro.Items.Clear();
+            fr.button1.Visible = false;
             LLenarList();
 
             while (fr.ShowDialog() != DialogResult.Cancel)
             {
-                
 
-                if (fr.lBregistro.SelectedItem!=null)
-                    gestor.Reservas.Remove((Reserva)fr.lBregistro.SelectedItem);
+                Reserva res = (Reserva)fr.lBregistro.SelectedItem;
+                if (res != null)
+                {
+                    res.alojamiento.CancelarReserva(res);
+                    gestor.CancelarReserva(res);
+
+                }
 
                 LLenarList();
             }

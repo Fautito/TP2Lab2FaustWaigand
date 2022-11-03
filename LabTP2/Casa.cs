@@ -24,7 +24,12 @@ namespace LabTP2
 
         public override decimal PrecioPorDia()
         {
-            return Trivago.precioBase * 2;
+            decimal precioBase = Trivago.precioBase;
+            foreach(bool s in this.Servicios)
+            {
+                if (s) precioBase += Decimal.Multiply(precioBase, Convert.ToDecimal(0.1));
+            }
+            return precioBase*this.Capacidad;
         }
 
 

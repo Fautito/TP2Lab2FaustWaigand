@@ -32,5 +32,11 @@ namespace LabTP2
 
             }
         }
+
+        private void cBAlojamiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }
