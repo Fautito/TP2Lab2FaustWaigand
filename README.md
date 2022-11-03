@@ -18,3 +18,5 @@ podria servir que cada ver q cambie un combo box, recorrar el gestor.MostrarAloj
 # IMPORTANTE # 
 
 ## al hacer la reserva debe quedar congelado el precio de la reserva y no debe cambiar al deserializar los datos guardados ##
+
+### para ver esto primero resolver como imprimir tickets ###
